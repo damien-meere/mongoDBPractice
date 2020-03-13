@@ -2,6 +2,7 @@ import pymongo
 import os
 
 MONGO_URI = os.getenv("MONGO_URI")
+test_mongo = os.getenv("MONGO_URI_TASK")
 DBS_NAME = "myTestDB"
 COLLECTION_NAME = "myFirstMDB"
 
@@ -21,6 +22,7 @@ def show_menu():
     print("4. Delete a Record")
     print("5. Exit")
     print("6. Display All Records")
+    print("7. Print MONGO_URI")
 
     option = input("Enter an Option: ")
     return option
@@ -133,6 +135,10 @@ def main_loop():
             break
         elif option == "6":
             display_all()
+        elif option == "7":
+            print("")
+            #print("MONGO_URI: "+ MONGO_URI)
+            print(os.getenv("MONGO_URI_TASK"))
         else:
             print("Invalid Option")
         print("")
